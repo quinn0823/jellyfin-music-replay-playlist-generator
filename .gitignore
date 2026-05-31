@@ -221,3 +221,7 @@ __marimo__/
 
 # Jellyfin OpenAPI specification files
 jellyfin-openapi-*.json
+
+# Sample files
+/samples/
+/examples/
