@@ -2,24 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debbuger (uv run python -m *)",
+            "name": "Python Debbuger",
             "type": "debugpy",
             "request": "launch",
-            "program": "uv run python -m jellyfin_music_replay",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python Debbuger (python -m *)",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "python -m jellyfin_music_replay",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Python Debbuger (uv run *)",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "uv run jellyfin-music-replay",
+            "program": "jellyfin_music_replay",
             "console": "integratedTerminal"
         }
     ]
