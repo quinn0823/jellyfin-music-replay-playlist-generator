@@ -74,6 +74,6 @@ def load_config() -> Config:
         playback_reporting_db=_env("PLAYBACK_REPORTING_DB"),
         is_public=_env_bool("IS_PUBLIC"),
         year=_load_period_config("YEAR", 100, "Replay {year}"),
-        half=_load_period_config("HALF", 50, "Replay H{half} {year}"),
-        quarter=_load_period_config("QUARTER", 25, "Replay Q{quarter} {year}"),
+        half=_load_period_config("HALF", 50, "Replay {year} H{half}"),
+        quarter=_load_period_config("QUARTER", 25, "Replay {year} Q{quarter}"),
     )
