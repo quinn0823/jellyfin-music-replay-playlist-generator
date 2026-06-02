@@ -64,7 +64,7 @@ def get_device_id() -> str:
 
 
 def load_config() -> Config:
-    load_dotenv()
+    load_dotenv(override=True)
 
     return Config(
         device=_env("DEVICE", "Python"),
