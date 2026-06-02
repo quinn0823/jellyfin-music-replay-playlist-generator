@@ -1,3 +1,5 @@
+from urllib.parse import quote
+
 import requests
 
 
@@ -5,8 +7,8 @@ def _build_auth_header(
     client: str, device: str, device_id: str, version: str, token: str | None = None
 ) -> str:
     parts = [
-        f'MediaBrowser Client="{client}"',
-        f'Device="{device}"',
+        f'MediaBrowser Client="{quote(client)}"',
+        f'Device="{quote(device)}"',
         f'DeviceId="{device_id}"',
         f'Version="{version}"',
     ]
