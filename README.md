@@ -1,6 +1,6 @@
 # Jellyfin Music Replay
 
-Generate music replay playlists for Jellyfin, based on the [Playback Reporting](https://github.com/jellyfin/jellyfin-plugin-playbackreporting) plugin.
+Jellyfin Music Replay generates music replay playlists for Jellyfin, based on the [Playback Reporting](https://github.com/jellyfin/jellyfin-plugin-playbackreporting) plugin.
 
 The tool reads your playback history from the Playback Reporting SQLite database, ranks songs by total play duration for each year / half-year / quarter, then creates or updates the corresponding playlists in Jellyfin.
 
@@ -114,18 +114,8 @@ Each period type (year, half-year, quarter) can be independently enabled/disable
 | `HALF_REPLAY_TITLE_TEMPLATE='Replay {year}H{half}'`                       | `Replay 25H1`, `Replay 25H2`                      |
 | `YEAR_REPLAY_YEAR_FORMAT='%y'`, `YEAR_REPLAY_TITLE_TEMPLATE='Top {year}'` | `Top 25`, `Top 26`                                |
 
-## How It Works
-
-1. **Read playback data** — Queries the `PlaybackActivity` table from the Playback Reporting SQLite database, filtering for `Audio` items only.
-2. **Aggregate by period** — Splits records into year / half-year / quarter buckets, then ranks songs by **total play duration** (not play count) within each period.
-3. **Authenticate** — Logs in to Jellyfin with your username and password (API key auth cannot manage playlists).
-4. **Resolve tracks** — Parses each song's `ItemName` (format: `{AlbumArtist} - {Name} ({Album})`) and matches it against your Jellyfin library to get the item IDs.
-5. **Create or update playlists** — For each period with results, either creates a new playlist or updates an existing one (matched by name).
-
-Any songs that can't be matched to your Jellyfin library are skipped with a warning on the console.
-
 ## Copyright
 
 Licensed under the GNU General Public License v3.0.
 
-Copyright (c) 2026 Jonathan Chiu
+Copyright © 2026 Jonathan Chiu
