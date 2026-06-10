@@ -4,7 +4,7 @@ Jellyfin Music Replay generates music replay playlists for Jellyfin, based on th
 
 The tool reads your playback history from the Playback Reporting SQLite database, ranks songs by total play duration for each year / half-year / quarter, then creates or updates the corresponding playlists in Jellyfin.
 
-## Prerequisites
+## Prerequisites and Compatibility
 
 - **[Jellyfin Server](https://jellyfin.org/)**: tested with `10.10.7`
 - **[Playback Reporting](https://github.com/jellyfin/jellyfin-plugin-playbackreporting) plugin**: tested with `16.0.0.0`
